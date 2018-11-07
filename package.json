@@ -1,0 +1,26 @@
+{
+  "name": "email-service",
+  "version": "1.0.0",
+  "description": "simple backend service for sending email",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hen-chow/email-service.git"
+  },
+  "author": "Hen Chow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hen-chow/email-service/issues"
+  },
+  "homepage": "https://github.com/hen-chow/email-service#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.8.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1"
+  }
+}
