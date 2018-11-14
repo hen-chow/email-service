@@ -16,16 +16,20 @@ Email service caters for:
 - Text (supporting plain text)
 
 ## Solution
-I chose Express for its ease of use and the fact that it's light-weight. 
+I chose Express for its ease of use and the fact that it's light-weight. The send email helpers are kept as generic as possible, to allow for scaling and changes should we elect to add or change email service providers.
+
+Only the `/POST` route is exposed at the moment as outlined in the brief.
 
 * For testing, mocha, chai and sinon were selected for testing as they well-maintained libraries. 
 * For linting, airbnb's eslint library was chosen to keep the codebase clean, consistent and maintainable.
 * For logs, bunyan is used to create and maintain logs for the project.
+* Deployment done via Heroku selected for ease of use, time constraints, and integration with Github.
 
 
 ### Technology/Libraries Used
 NodeJs
 Express
+Heroku
 
 ## Installation
 Clone or download from Github repository: [email-service](https://github.com/hen-chow/email-service)
@@ -51,7 +55,26 @@ To run email service locally, you need to have a valid `SendGrid` and `Mailgun` 
   config.sendGridApikey = 'THIS_IS_YOUR_API_KEY';
 ```
 
-To run locally, run `npm run start`. You can now send email request to `https://localhost:3000/email/send` to test locally using Postman or cURL requests.
+To run locally, run `npm run start`. You can now send email request to `https://localhost:3000/email/send` to test locally using Postman or cURL `\POST` requests.
+
+## Deployment
+Email-service project is deployed via Heroku `https://sm-code-test-email-service.herokuapp.com/`
+
+You can test in production by sending email requests as a `\POST` request to https://sm-code-test-email-service.herokuapp.com/email/send(https://sm-code-test-email-service.herokuapp.com/email/send)
+
+### Request prerequisites
+The application expects the email request data to be of this format, with mandatory `from`, `to`, `subject` and `text` fields.
+
+```
+{
+  to: [{email, name}, {email, name}],
+  cc: [{email, name}, {email, name}],
+  bcc: [{email, name}, {email, name}],
+  from: {email, name},
+  subject,
+  text: content,
+}
+```
 
 ## Utility commands
 The Email-service project is bundled with various commands for developers:
@@ -64,6 +87,7 @@ The Email-service project is bundled with various commands for developers:
 Due to time-constraints, I wasn't able to address some areas that are crucial to maintaining a good project.
 * Better handling of failover to assign primary and secondary email service providers
 * More comprehensive test coverage - particularly tests need to be written for `app.js` and `email.js`
+* Configure CI service for project as check before deployment
 * Improved handling and logging of each task
 * Separation of concerns between tasks, and utils task to make api calls
 * With implementation of tasks will allow us to introduce strict schema check for each request to ensure that required information is supplied
