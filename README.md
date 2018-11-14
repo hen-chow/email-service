@@ -62,7 +62,7 @@ Email-service project is deployed via Heroku `https://sm-code-test-email-service
 
 You can test in production by sending email requests as a `\POST` request to https://sm-code-test-email-service.herokuapp.com/email/send(https://sm-code-test-email-service.herokuapp.com/email/send)
 
-### Request prerequisites
+### Assumptions
 The application expects the email request data to be of this format, with mandatory `from`, `to`, `subject` and `text` fields.
 
 ```
@@ -75,6 +75,8 @@ The application expects the email request data to be of this format, with mandat
   text: content,
 }
 ```
+
+Application also expects that frontend will handle communicating errors to users (eg `from` field is missing from request), and returns these errors as json to frontend to decide how to render notification to user.
 
 ## Utility commands
 The Email-service project is bundled with various commands for developers:
