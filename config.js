@@ -1,11 +1,16 @@
 const config = {};
 
 if (process.env.NODE_ENV === 'test') {
+  /* mailgun api */
   config.mailgunApi = 'https://api.mailgun.net/v3';
   config.mailgunDomain = 'sandbox-test-mailgun.org';
   config.mailgunApikey = 'this-is-mailgun-api-key';
+
+  /* sendgrid api */
   config.sendGridApi = 'https://api.sendgrid.com/v3';
   config.sendGridApikey = 'this-is-sendgrid-api-key';
+
+  config.port = 3000;
 } else if (process.env.NODE_ENV === 'production') {
   /* mailgun api */
   config.mailgunApi = 'https://api.mailgun.net/v3';
@@ -15,6 +20,8 @@ if (process.env.NODE_ENV === 'test') {
   /* sendgrip api */
   config.sendGridApi = 'https://api.sendgrid.com/v3';
   config.sendGridApikey = process.env.SENDGRID_API_KEY;
+
+  config.port = 3000;
 } else {
   /* mailgun api */
   config.mailgunApi = 'https://api.mailgun.net/v3';
@@ -24,6 +31,8 @@ if (process.env.NODE_ENV === 'test') {
   /* sendgrip api */
   config.sendGridApi = 'https://api.sendgrid.com/v3';
   config.sendGridApikey = 'THIS_IS_YOUR_API_KEY';
+
+  config.port = 3000;
 }
 
 module.exports = config;
