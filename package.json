@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/hen-chow/email-service#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "bunyan": "^1.8.12",
     "express": "^4.16.4",
     "node-fetch": "^2.2.1",
     "query-string": "^6.2.0"
