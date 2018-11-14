@@ -1,11 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bunyan = require('bunyan');
-const config = require('./config');
 const sendEmail = require('./lib/email');
 
 const log = bunyan.createLogger({ name: 'EmailServiceApp' });
-const { port } = config;
 
 const app = express();
 
@@ -92,9 +90,10 @@ app.post('/email/send', async (req, res) => {
   }
 });
 
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-  log.info(`Application listening at localhost://${port}`);
+  log.info(`Application listening at port://${port}`);
 });
 
 
