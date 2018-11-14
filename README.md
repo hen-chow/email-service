@@ -6,30 +6,30 @@ Email-service is an Express app that accepts necessary information and sends ema
 The application provides an abstraction between two email service providers. If one of the services goes down, this service will failover to a different provider without affecting customers. SendGrid is selected as the primary email service provider, with Mailgun as the secondary provider.
 
 Email services used:
-- SendGrid
-- Mailgun
+* SendGrid
+* Mailgun
 
 Email service caters for:
-- Multiple email recipients
-- CCs
-- BCCs
-- Text (supporting plain text)
+* Multiple email recipients
+* CCs
+* BCCs
+* Text (supporting plain text)
 
 ## Solution
 I chose Express for its ease of use and the fact that it's light-weight. The send email helpers are kept as generic as possible, to allow for scaling and changes should we elect to add or change email service providers.
 
 Only the `/POST` route is exposed at the moment as outlined in the brief.
 
-* For testing, mocha, chai and sinon were selected for testing as they well-maintained libraries. 
-* For linting, airbnb's eslint library was chosen to keep the codebase clean, consistent and maintainable.
-* For logs, bunyan is used to create and maintain logs for the project.
-* Deployment done via Heroku selected for ease of use, time constraints, and integration with Github.
+* For testing, **mocha**, **chai** and **sinon** were selected for testing as they well-maintained libraries. 
+* For linting, **airbnb's eslint** library was chosen to keep the codebase clean, consistent and maintainable.
+* For logs, **bunyan** is used to create and maintain logs for the project.
+* Deployment done via **Heroku** selected for ease of use, time constraints, and integration with Github.
 
 
 ### Technology/Libraries Used
-NodeJs
-Express
-Heroku
+* NodeJs
+* Express
+* Heroku
 
 ## Installation
 Clone or download from Github repository: [email-service](https://github.com/hen-chow/email-service)
