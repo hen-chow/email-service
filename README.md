@@ -1,7 +1,7 @@
 # Email-service
 
 ## Problem
-Email-service is an Express app that accepts necessary information and sends emails. 
+Email-service is an Express app that accepts necessary information and sends emails. Create a NodeJS backend solution to support the email service requirements.
 
 The application provides an abstraction between two email service providers. If one of the services goes down, this service will failover to a different provider without affecting customers. SendGrid is selected as the primary email service provider, with Mailgun as the secondary provider.
 
@@ -18,7 +18,7 @@ Email service caters for:
 ## Solution
 I chose Express for its ease of use and the fact that it's light-weight. The send email helpers are kept as generic as possible, to allow for scaling and changes should we elect to add or change email service providers.
 
-Only the `/POST` route is exposed at the moment as outlined in the brief.
+Only the `/POST` route is exposed at the moment as outlined in the brief, so navigating to the url will not render anything in browser.
 
 * For testing, **mocha**, **chai** and **sinon** were selected for testing as they well-maintained libraries. 
 * For linting, **airbnb's eslint** library was chosen to keep the codebase clean, consistent and maintainable.
