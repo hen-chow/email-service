@@ -8,7 +8,7 @@ describe('getEndpointUrl()', () => {
       url: '/messages',
     };
     const url = getEndpointUrl(options);
-  
+
     expect(url).to.equal('https://api.mailgun.net/v3/sandbox-test-mailgun.org/messages');
   });
 
@@ -18,7 +18,7 @@ describe('getEndpointUrl()', () => {
       url: '/mail/send',
     };
     const url = getEndpointUrl(options);
-  
+
     expect(url).to.equal('https://api.sendgrid.com/v3/mail/send');
   });
 

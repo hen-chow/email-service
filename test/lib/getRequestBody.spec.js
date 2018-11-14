@@ -164,7 +164,7 @@ describe('getRequestBody()', () => {
 
     expect(requestBody).to.deep.equal(stringifiedResult);
   });
-  
+
   it('returns the expected request body for Mailgun when provided with only email details for from field', () => {
     const payload = {
       provider: 'mailgun',
